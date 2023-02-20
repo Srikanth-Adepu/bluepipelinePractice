@@ -1,10 +1,10 @@
 pipeline {
   agent any
   stages {
-    stage('Compile') {
+    stage('Checkout') {
       steps {
         echo 'Compiling.......'
-        sh 'mvn -f bluepipelinePractice/maven-samples/single-module/pom.xml compile '
+        git(url: 'https://github.com/Srikanth-Adepu/bluepipelinePractice.git', branch: 'main')
       }
     }
 
